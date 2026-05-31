@@ -11,14 +11,14 @@ client = OpenAI(
 
 # Basic chat
 response = client.chat.completions.create(
-    model="deepseek-chat",  # V4 Flash — $0.25/M output
+    model="deepseek-ai/DeepSeek-V4-Flash",  # V4 Flash — $0.25/M output
     messages=[{"role": "user", "content": "Explain recursion in 50 words"}],
 )
 print("[Chat]", response.choices[0].message.content)
 
 # Streaming
 stream = client.chat.completions.create(
-    model="deepseek-chat",
+    model="deepseek-ai/DeepSeek-V4-Flash",
     messages=[{"role": "user", "content": "Write a haiku about coding"}],
     stream=True,
 )
@@ -42,7 +42,7 @@ tools = [{
     },
 }]
 response = client.chat.completions.create(
-    model="deepseek-chat",
+    model="deepseek-ai/DeepSeek-V4-Flash",
     messages=[{"role": "user", "content": "What's the weather in Tokyo?"}],
     tools=tools,
     tool_choice="auto",
